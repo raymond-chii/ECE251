@@ -1,0 +1,47 @@
+$date
+	Sun Mar 12 18:37:31 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tw_multiplexer_tb $end
+$scope module DUT $end
+$var wire 1 ! ctrl $end
+$var wire 1 " in1 $end
+$var wire 1 # in2 $end
+$var wire 1 $ out $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0$
+0#
+0"
+0!
+$end
+#10000
+1!
+#20000
+0!
+1#
+#30000
+1$
+1!
+#40000
+0!
+0#
+1"
+#50000
+0$
+1!
+#60000
+1$
+0!
+1#
+#70000
+1!
+#80000

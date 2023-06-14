@@ -1,0 +1,114 @@
+#! /usr/local/Cellar/icarus-verilog/11.0/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/system.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/va_math.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/v2009.vpi";
+S_0x7fa5d0904340 .scope package, "$unit" "$unit" 2 1;
+ .timescale 0 0;
+S_0x7fa5d09044b0 .scope module, "tw_multiplexer_tb" "tw_multiplexer_tb" 3 3;
+ .timescale -9 -12;
+v0x7fa5d0a0f740_0 .var "ctrl", 0 0;
+v0x7fa5d0a0f800_0 .var "in1", 0 0;
+v0x7fa5d0a0f8b0_0 .var "in2", 0 0;
+v0x7fa5d0a0f980_0 .net "out", 0 0, L_0x7fa5d0a0fcf0;  1 drivers
+S_0x7fa5d0904620 .scope module, "DUT" "tw_multiplexer" 3 8, 4 3 0, S_0x7fa5d09044b0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /INPUT 1 "ctrl";
+    .port_info 3 /OUTPUT 1 "out";
+L_0x7fa5d0a0fa10 .functor AND 1, v0x7fa5d0a0f740_0, v0x7fa5d0a0f8b0_0, C4<1>, C4<1>;
+L_0x7fa5d0a0fbe0 .functor AND 1, L_0x7fa5d0a0fb40, v0x7fa5d0a0f800_0, C4<1>, C4<1>;
+L_0x7fa5d0a0fcf0 .functor OR 1, L_0x7fa5d0a0fa10, L_0x7fa5d0a0fbe0, C4<0>, C4<0>;
+v0x7fa5d09047f0_0 .net *"_ivl_0", 0 0, L_0x7fa5d0a0fa10;  1 drivers
+v0x7fa5d0a0f300_0 .net *"_ivl_3", 0 0, L_0x7fa5d0a0fb40;  1 drivers
+v0x7fa5d0a0f3b0_0 .net *"_ivl_4", 0 0, L_0x7fa5d0a0fbe0;  1 drivers
+v0x7fa5d0a0f460_0 .net "ctrl", 0 0, v0x7fa5d0a0f740_0;  1 drivers
+v0x7fa5d0a0f4f0_0 .net "in1", 0 0, v0x7fa5d0a0f800_0;  1 drivers
+v0x7fa5d0a0f5c0_0 .net "in2", 0 0, v0x7fa5d0a0f8b0_0;  1 drivers
+v0x7fa5d0a0f660_0 .net "out", 0 0, L_0x7fa5d0a0fcf0;  alias, 1 drivers
+L_0x7fa5d0a0fb40 .reduce/nor v0x7fa5d0a0f740_0;
+    .scope S_0x7fa5d09044b0;
+T_0 ;
+    %vpi_call/w 3 11 "$monitor", "in1 = %b, in2 = %b, ctrl = %b, out = %b", v0x7fa5d0a0f800_0, v0x7fa5d0a0f8b0_0, v0x7fa5d0a0f740_0, v0x7fa5d0a0f980_0 {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_0x7fa5d09044b0;
+T_1 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fa5d0a0f800_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fa5d0a0f8b0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fa5d0a0f740_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fa5d0a0f800_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fa5d0a0f8b0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fa5d0a0f740_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fa5d0a0f800_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fa5d0a0f8b0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fa5d0a0f740_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fa5d0a0f800_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fa5d0a0f8b0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fa5d0a0f740_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fa5d0a0f800_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fa5d0a0f8b0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fa5d0a0f740_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fa5d0a0f800_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fa5d0a0f8b0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fa5d0a0f740_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fa5d0a0f800_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fa5d0a0f8b0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fa5d0a0f740_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fa5d0a0f800_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fa5d0a0f8b0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fa5d0a0f740_0, 0, 1;
+    %delay 10000, 0;
+    %vpi_call/w 3 55 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+    .scope S_0x7fa5d09044b0;
+T_2 ;
+    %vpi_call/w 3 59 "$dumpfile", "waveForm.vcd" {0 0 0};
+    %vpi_call/w 3 60 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x7fa5d0904620 {0 0 0};
+    %end;
+    .thread T_2;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "-";
+    "tw_multiplexer_tb.sv";
+    "tw_multiplexer.sv";

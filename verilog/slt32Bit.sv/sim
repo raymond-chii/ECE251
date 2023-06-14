@@ -1,0 +1,50 @@
+#! /usr/local/Cellar/icarus-verilog/11.0/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/system.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/va_math.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/v2009.vpi";
+S_0x7fe30c005f60 .scope package, "$unit" "$unit" 2 1;
+ .timescale 0 0;
+S_0x7fe30c0060d0 .scope module, "slt_tb" "slt_tb" 3 1;
+ .timescale 0 0;
+v0x7fe30c019950_0 .var "a", 31 0;
+v0x7fe30c019a00_0 .var "b", 31 0;
+v0x7fe30c019ab0_0 .net "out", 0 0, L_0x7fe30c019cc0;  1 drivers
+S_0x7fe30c004f60 .scope module, "uut" "slt" 3 6, 4 1 0, S_0x7fe30c0060d0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 32 "a";
+    .port_info 1 /INPUT 32 "b";
+    .port_info 2 /OUTPUT 1 "out";
+v0x7fe30c009840_0 .net *"_ivl_0", 0 0, L_0x7fe30c019b80;  1 drivers
+L_0x7fe30c263008 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x7fe30c019570_0 .net/2u *"_ivl_2", 0 0, L_0x7fe30c263008;  1 drivers
+L_0x7fe30c263050 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x7fe30c019620_0 .net/2u *"_ivl_4", 0 0, L_0x7fe30c263050;  1 drivers
+v0x7fe30c0196e0_0 .net "a", 31 0, v0x7fe30c019950_0;  1 drivers
+v0x7fe30c019790_0 .net "b", 31 0, v0x7fe30c019a00_0;  1 drivers
+v0x7fe30c019880_0 .net "out", 0 0, L_0x7fe30c019cc0;  alias, 1 drivers
+L_0x7fe30c019b80 .cmp/gt 32, v0x7fe30c019a00_0, v0x7fe30c019950_0;
+L_0x7fe30c019cc0 .functor MUXZ 1, L_0x7fe30c263050, L_0x7fe30c263008, L_0x7fe30c019b80, C4<>;
+    .scope S_0x7fe30c0060d0;
+T_0 ;
+    %pushi/vec4 10, 0, 32;
+    %store/vec4 v0x7fe30c019950_0, 0, 32;
+    %pushi/vec4 20, 0, 32;
+    %store/vec4 v0x7fe30c019a00_0, 0, 32;
+    %delay 10, 0;
+    %vpi_call/w 3 16 "$display", "a = %d, b = %d, out = %d", v0x7fe30c019950_0, v0x7fe30c019a00_0, v0x7fe30c019ab0_0 {0 0 0};
+    %vpi_call/w 3 17 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "-";
+    "slt32Bit_tb.sv";
+    "slt32Bit.sv";
